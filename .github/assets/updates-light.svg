@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200" width="1200" height="200" role="img" aria-label="How an update reaches you: private source, CI build without the signing key, signed offline, published here, signature checked by your app">
+  <title>How an update reaches you</title>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path class="grid" d="M40 0H0V40" fill="none"/>
+    </pattern>
+    <path id="plus" d="M-7 0H7M0-7V7"/>
+  </defs>
+  <style>
+    .bg   { fill: #ffffff; }
+    .grid { stroke: rgb(0 0 0 / 5%); stroke-width: 1; }
+    .card { fill: #ffffff; stroke: rgb(0 0 0 / 14%); }
+    .line { stroke: rgb(0 0 0 / 9%); }
+    .track { fill: rgb(0 0 0 / 7%); }
+    .mark { stroke: #a8a8a8; }
+    .fg   { fill: #171717; }
+    .ink  { stroke: #171717; }
+    .mut  { fill: #4d4d4d; }
+    .smut { stroke: #4d4d4d; }
+    .dim  { fill: #8f8f8f; }
+    .arc1 { stroke: #666666; }
+    .arc2 { stroke: #c2c2c2; }
+    .pill { fill: rgb(0 0 0 / 3%); stroke: rgb(0 0 0 / 12%); }
+    .tile { fill: #f2f2f2; }
+    .focus { fill: #006be0; }
+    .sfocus { stroke: #006be0; }
+    svg { --focus: #006be0; }
+
+    .sans { font-family: Geist, 'Geist Sans', Inter, 'Inter Display', ui-sans-serif, system-ui, 'Segoe UI', sans-serif; }
+    .mono { font-family: 'Geist Mono', ui-monospace, 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace; }
+
+    .lit { stroke: var(--focus); opacity: 0; animation-duration: 8s; animation-iteration-count: infinite; animation-timing-function: ease-out; }
+    .pkt { animation: pkt 8s linear infinite; opacity: 0; }
+    @keyframes pkt {
+      0% { opacity: 1; transform: translateX(0); }
+      80% { opacity: 1; transform: translateX(896px); }
+      80.1%, 100% { opacity: 0; transform: translateX(896px); }
+    }
+    .n0 { animation-name: n0; }
+    @keyframes n0 { 0%, 0.0% { opacity: 0; } 1.5%, 93% { opacity: 1; } 99%, 100% { opacity: 0; } }
+    .n1 { animation-name: n1; }
+    @keyframes n1 { 0%, 20.0% { opacity: 0; } 21.5%, 93% { opacity: 1; } 99%, 100% { opacity: 0; } }
+    .n2 { animation-name: n2; }
+    @keyframes n2 { 0%, 40.0% { opacity: 0; } 41.5%, 93% { opacity: 1; } 99%, 100% { opacity: 0; } }
+    .n3 { animation-name: n3; }
+    @keyframes n3 { 0%, 60.0% { opacity: 0; } 61.5%, 93% { opacity: 1; } 99%, 100% { opacity: 0; } }
+    .n4 { animation-name: n4; }
+    @keyframes n4 { 0%, 80.0% { opacity: 0; } 81.5%, 93% { opacity: 1; } 99%, 100% { opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) {
+      .lit, .pkt { animation: none; }
+      .lit { opacity: 1; }
+    }
+  </style>
+
+  <rect class="bg" width="1200" height="200"/>
+  <rect width="1200" height="200" fill="url(#grid)"/>
+  <text class="mono dim" x="60" y="40" font-size="12" letter-spacing="1.6">HOW AN UPDATE REACHES YOU</text>
+  <text class="mono dim" x="1140" y="40" font-size="12" letter-spacing="1.6" text-anchor="end">KEY DBE889EAC0D37AE6</text>
+
+  <path class="line" d="M60 102.5H1140" stroke-dasharray="2 4"/>
+  <rect class="focus pkt" x="147" y="98.0" width="10" height="9" rx="1"/>
+
+  <g>
+    <rect class="card" x="60.5" y="64.5" width="183" height="75" rx="6"/>
+    <rect class="lit n0" x="60.5" y="64.5" width="183" height="75" rx="6" fill="none" stroke-width="1.5"/>
+    <text class="sans fg" x="78" y="96" font-size="17" font-weight="600" letter-spacing="-0.3">source</text>
+    <text class="mono dim" x="78" y="120" font-size="12">private repository</text>
+    <text class="mono dim" x="228" y="96" font-size="11" text-anchor="end">01</text>
+  </g>
+  <g>
+    <rect class="card" x="284.5" y="64.5" width="183" height="75" rx="6"/>
+    <rect class="lit n1" x="284.5" y="64.5" width="183" height="75" rx="6" fill="none" stroke-width="1.5"/>
+    <text class="sans fg" x="302" y="96" font-size="17" font-weight="600" letter-spacing="-0.3">build</text>
+    <text class="mono dim" x="302" y="120" font-size="12">CI · no signing key</text>
+    <text class="mono dim" x="452" y="96" font-size="11" text-anchor="end">02</text>
+  </g>
+  <g>
+    <rect class="card" x="508.5" y="64.5" width="183" height="75" rx="6"/>
+    <rect class="lit n2" x="508.5" y="64.5" width="183" height="75" rx="6" fill="none" stroke-width="1.5"/>
+    <text class="sans fg" x="526" y="96" font-size="17" font-weight="600" letter-spacing="-0.3">sign</text>
+    <text class="mono dim" x="526" y="120" font-size="12">offline · minisign</text>
+    <text class="mono dim" x="676" y="96" font-size="11" text-anchor="end">03</text>
+  </g>
+  <g>
+    <rect class="card" x="732.5" y="64.5" width="183" height="75" rx="6"/>
+    <rect class="lit n3" x="732.5" y="64.5" width="183" height="75" rx="6" fill="none" stroke-width="1.5"/>
+    <text class="sans fg" x="750" y="96" font-size="17" font-weight="600" letter-spacing="-0.3">publish</text>
+    <text class="mono dim" x="750" y="120" font-size="12">leise-releases</text>
+    <text class="mono dim" x="900" y="96" font-size="11" text-anchor="end">04</text>
+  </g>
+  <g>
+    <rect class="card" x="956.5" y="64.5" width="183" height="75" rx="6"/>
+    <rect class="lit n4" x="956.5" y="64.5" width="183" height="75" rx="6" fill="none" stroke-width="1.5"/>
+    <text class="sans fg" x="974" y="96" font-size="17" font-weight="600" letter-spacing="-0.3">your app</text>
+    <text class="mono dim" x="974" y="120" font-size="12">checks the signature</text>
+    <text class="mono dim" x="1124" y="96" font-size="11" text-anchor="end">05</text>
+  </g>
+
+  <text class="mono dim" x="60" y="180" font-size="12">the signing key never touches GitHub or CI · your app refuses any file whose signature doesn't match</text>
+</svg>
