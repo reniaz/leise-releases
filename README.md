@@ -33,9 +33,7 @@ Grab the newest build from **[the latest release →](https://github.com/reniaz/
 | --- | --- | --- |
 | **Linux** | `Leise_<version>_amd64.AppImage` | you want one file that runs on any distribution and updates itself |
 | Linux | `Leise_<version>_amd64.deb` · `Leise-<version>-1.x86_64.rpm` | you'd rather install through your package manager; new versions are installed by hand |
-| **Windows** | `Leise_<version>_x64-setup.exe` | you're installing for the first time; works offline, WebView2 included |
-| Windows | `Leise_<version>_x64-slim-setup.exe` | you already have WebView2, which current Windows 10 and 11 ship with; smaller, and what the updater uses |
-| Windows | `Leise_<version>_x64_en-US.msi` | you deploy software with MSI tooling |
+| **Windows** | `Leise_<version>_x64-setup.exe` | you're on Windows 10 or 11; the same small installer is what the updater uses |
 
 Every release also carries `SHA256SUMS`, a `.sig` signature next to each updater file, and
 `latest.json`.
@@ -49,7 +47,9 @@ chmod +x Leise_*_amd64.AppImage
 ./Leise_*_amd64.AppImage
 ```
 
-**Windows:** run the setup. The installer isn't signed with a Windows code-signing certificate, so
+**Windows:** run the setup. Leise draws its window with Microsoft's WebView2, which Windows 11 and
+current Windows 10 already have; on an older Windows 10 without it, the installer fetches it from
+Microsoft first. The installer isn't signed with a Windows code-signing certificate, so
 SmartScreen may say it doesn't recognise the app: choose **More info → Run anyway**. If you want to
 be sure first, [verify the download](#-verify-a-download).
 
@@ -86,7 +86,7 @@ sha256sum -c SHA256SUMS --ignore-missing
 On Windows, compare `Get-FileHash .\Leise_<version>_x64-setup.exe` (PowerShell) with the matching
 line in `SHA256SUMS`.
 
-**Signatures.** The AppImage and the slim Windows installer are signed with
+**Signatures.** The AppImage and the Windows installer are signed with
 [minisign](https://jedisct1.github.io/minisign/), key ID `DBE889EAC0D37AE6`. The public key is
 [`minisign.pub`](minisign.pub) in this repository and is also built into Leise:
 
